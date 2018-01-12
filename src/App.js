@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Note from './Note/Note'
 import './App.css';
 
@@ -23,7 +22,13 @@ class App extends Component {
           <div className="heading">React & Firebase To-Do List</div>
         </div>
         <div className="notesBody">
-          <Note noteContent={} noteId={} key={} />
+          {
+            this.state.notes.map((note) => {
+              return(
+                <Note noteContent={note.noteContent} noteId={note.id} key={note.id} />
+              )
+            })
+          }
         </div>
         <div className="notesFooter">
           Footer will go here...

@@ -16,6 +16,10 @@ class App extends Component {
     }
   }
 
+  addNote(note){
+    this.state.notes.push(note);
+  }
+
   render() {
     return (
       <div className="notesWrapper">
@@ -32,7 +36,7 @@ class App extends Component {
           }
         </div>
         <div className="notesFooter">
-          <NoteForm />
+          <NoteForm addNote={this.addNote}/>
         </div>
       </div>
     );
